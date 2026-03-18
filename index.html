@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eva Vivalt</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --text: #1d1d1f;
+  --text-light: #6e6e73;
+  --accent: #0071e3;
+  --bg: #fff;
+  --bg-alt: #f5f5f7;
+  --border: #d2d2d7;
+  --max-width: 980px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', -apple-system, sans-serif; color: var(--text); background: var(--bg); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Nav */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,0.8); backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+nav .inner {
+  max-width: var(--max-width); margin: 0 auto; padding: 0.8rem 2rem;
+  display: flex; align-items: center; gap: 3rem;
+}
+nav .logo { font-weight: 700; font-size: 1.05rem; color: var(--text); white-space: nowrap; text-decoration: none; }
+nav .logo:hover { text-decoration: none; }
+nav .tabs { display: flex; gap: 0.25rem; }
+nav .tabs a {
+  padding: 0.4rem 0.9rem; border-radius: 6px; font-size: 0.85rem;
+  font-weight: 500; color: var(--text-light); transition: all 0.15s;
+}
+nav .tabs a:hover { background: var(--bg-alt); color: var(--text); text-decoration: none; }
+nav .tabs a.active { background: var(--text); color: #fff; }
+
+/* Hero */
+.hero {
+  max-width: var(--max-width); margin: 0 auto; padding: 5rem 2rem 4rem;
+  display: grid; grid-template-columns: 1fr 220px; gap: 3rem; align-items: start;
+}
+.hero-text h1 {
+  font-family: 'Source Serif 4', serif; font-size: 3rem; font-weight: 600;
+  line-height: 1.15; margin-bottom: 1.5rem; letter-spacing: -0.02em;
+}
+.hero-text p { font-size: 1.1rem; color: var(--text-light); line-height: 1.7; }
+.hero-text .role {
+  margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-light);
+  padding-top: 1.5rem; border-top: 1px solid var(--border);
+}
+.hero-photo {
+  width: 100%; aspect-ratio: 4/4; background: var(--bg-alt);
+  border-radius: 12px; overflow: hidden;
+}
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+
+/* Section */
+.section { background: var(--bg-alt); }
+.section:nth-child(even) { background: var(--bg); }
+.section-inner {
+  max-width: var(--max-width); margin: 0 auto; padding: 4rem 2rem;
+}
+.section-inner h2 {
+  font-family: 'Source Serif 4', serif; font-size: 2rem; font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.section-inner .subtitle {
+  font-size: 1rem; color: var(--text-light); margin-bottom: 2.5rem;
+}
+
+/* Research list */
+.paper-list { list-style: none; }
+.paper-list li {
+  padding: 1.25rem 0; border-bottom: 1px solid var(--border);
+  display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: baseline;
+}
+.paper-list li:last-child { border-bottom: none; }
+.paper-title { font-weight: 500; font-size: 0.95rem; line-height: 1.5; }
+.paper-title a { color: var(--text); }
+.paper-title a:hover { color: var(--accent); }
+.paper-authors { font-size: 0.82rem; color: var(--text-light); margin-top: 0.25rem; }
+.paper-press { font-size: 0.75rem; color: #999; margin-top: 0.15rem; }
+.paper-press em { font-style: italic; }
+.paper-venue {
+  font-size: 0.8rem; color: var(--accent); white-space: nowrap;
+  font-weight: 500;
+}
+
+/* Footer */
+footer {
+  max-width: var(--max-width); margin: 0 auto; padding: 3rem 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.85rem; color: var(--text-light);
+}
+footer .links { display: flex; gap: 1.5rem; }
+
+@media (max-width: 768px) {
+  .hero { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-photo { max-width: 200px; }
+  .hero-text h1 { font-size: 2.2rem; }
+  .paper-list li { grid-template-columns: 1fr; gap: 0.5rem; }
+  nav .inner { gap: 1.5rem; }
+  nav .tabs a { padding: 0.3rem 0.6rem; font-size: 0.8rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a href="index.html" class="logo">Eva Vivalt</a>
+    <div class="tabs">
+      <a href="index.html" class="active">Home</a>
+      <a href="research.html">Research</a>
+      <a href="products.html">Products</a>
+      <a href="writing.html">Writing</a>
+      <a href="https://www.evavivalt.com/cv">CV</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-text">
+    <h1>Cash transfers, evidence use in decision-making, and cumulative science.</h1>
+    <p>I am an Assistant Professor of Economics at the University of Toronto. My research focuses on guaranteed income and cash transfers, how decision-makers interpret evidence, and how we learn across studies.</p>
+    <div class="role">
+      Affiliations: J-PAL, Y-RISE, Inclusive Economy Lab, Schwartz Reisman Institute, Forward Society Lab, CEPR Research Policy Network in AI
+    </div>
+  </div>
+  <div class="hero-photo">
+    <img src="eva-photo.png" alt="Eva Vivalt">
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-inner">
+    <h2>Research</h2>
+    <p class="subtitle">Selected publications and working papers.</p>
+
+    <ul class="paper-list">
+      <li>
+        <div>
+          <div class="paper-title"><a href="papers/Vivalt-et-al-ORUS-employment.pdf">The Employment Effects of a Guaranteed Income: Experimental Evidence from Two U.S. States</a></div>
+          <div class="paper-authors">with Rhodes, Bartik, Broockman, Krause, Miller (2025)</div>
+        </div>
+        <div class="paper-venue">QJE, accepted</div>
+      </li>
+      <li>
+        <div>
+          <div class="paper-title"><a href="papers/Miller-et-al-ORUS-health.pdf">Does Income Affect Health? Evidence from a Randomized Controlled Trial of a Guaranteed Income</a></div>
+          <div class="paper-authors">with Miller, Rhodes, Bartik, Broockman, Krause (2025)</div>
+        </div>
+        <div class="paper-venue">R&R, AER</div>
+      </li>
+      <li>
+        <div>
+          <div class="paper-title"><a href="https://www.nber.org/papers/w34493">Forecasting Social Science: Evidence from 100 Projects</a></div>
+          <div class="paper-authors">with DellaVigna (2025)</div>
+        </div>
+        <div class="paper-venue">NBER WP</div>
+      </li>
+      <li>
+        <div>
+          <div class="paper-title"><a href="papers/Formal-Evidence.pdf">Local Knowledge, Formal Evidence, and Policy Decisions</a></div>
+          <div class="paper-authors">with Coville, KC (2025)</div>
+        </div>
+        <div class="paper-venue">J Dev Econ</div>
+      </li>
+      <li>
+        <div>
+          <div class="paper-title"><a href="papers/How-Do-Policymakers-Update.pdf">How Do Policymakers Update Their Beliefs?</a></div>
+          <div class="paper-authors">with Coville (2023)</div>
+        </div>
+        <div class="paper-venue">J Dev Econ</div>
+      </li>
+      <li>
+        <div>
+          <div class="paper-title"><a href="https://doi.org/10.1093/jeea/jvaa019">How Much Can We Generalize from Impact Evaluations?</a></div>
+          <div class="paper-authors">Vivalt (2020)</div>
+        </div>
+        <div class="paper-venue">JEEA</div>
+      </li>
+      <li>
+        <div>
+          <div class="paper-title"><a href="https://doi.org/10.1126/science.aaz1704">Predict Science to Improve Science</a></div>
+          <div class="paper-authors">with DellaVigna, Pope (2019)</div>
+        </div>
+        <div class="paper-venue">Science</div>
+      </li>
+      <li>
+        <div>
+          <div class="paper-title"><a href="https://dx.doi.org/10.2139/ssrn.4984557">Moral Preferences and the Marketplace of Ideas</a></div>
+          <div class="paper-authors">with Huet-Vaughn, Pham, Tasoff (2025)</div>
+        </div>
+        <div class="paper-venue">R&R, Econ J</div>
+      </li>
+      <li>
+        <div>
+          <div class="paper-title"><a href="papers/Impact-of-New-Products-on-Ethical-Beliefs.pdf">The Impact of New Products on Ethical Beliefs</a></div>
+          <div class="paper-authors">with Freitas-Groff, Macdonald (2026)</div>
+        </div>
+        <div class="paper-venue">Cond. acc., EER</div>
+      </li>
+    </ul>
+    <p style="margin-top:1.5rem;"><a href="research.html">View all publications &rarr;</a></p>
+  </div>
+</div>
+
+<footer>
+  <div>eva.vivalt@utoronto.ca</div>
+  <div class="links">
+    <a href="https://twitter.com/evavivalt">Twitter</a>
+    <a href="https://scholar.google.com/citations?user=XhWB2GIAAAAJ">Google Scholar</a>
+  </div>
+</footer>
+
+</body>
+</html>

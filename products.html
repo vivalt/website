@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products - Eva Vivalt</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --text: #1d1d1f;
+  --text-light: #6e6e73;
+  --accent: #0071e3;
+  --bg: #fff;
+  --bg-alt: #f5f5f7;
+  --border: #d2d2d7;
+  --green: #059669;
+  --green-light: #ecfdf5;
+  --max-width: 980px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', -apple-system, sans-serif; color: var(--text); background: var(--bg); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,0.8); backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+nav .inner {
+  max-width: var(--max-width); margin: 0 auto; padding: 0.8rem 2rem;
+  display: flex; align-items: center; gap: 3rem;
+}
+nav .logo { font-weight: 700; font-size: 1.05rem; color: var(--text); white-space: nowrap; text-decoration: none; }
+nav .logo:hover { text-decoration: none; }
+nav .tabs { display: flex; gap: 0.25rem; }
+nav .tabs a {
+  padding: 0.4rem 0.9rem; border-radius: 6px; font-size: 0.85rem;
+  font-weight: 500; color: var(--text-light); transition: all 0.15s;
+}
+nav .tabs a:hover { background: var(--bg-alt); color: var(--text); text-decoration: none; }
+nav .tabs a.active { background: var(--text); color: #fff; }
+
+.page-header {
+  max-width: var(--max-width); margin: 0 auto; padding: 3.5rem 2rem 0.5rem;
+}
+.page-header h1 {
+  font-family: 'Source Serif 4', serif; font-size: 2.2rem; font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.page-header .subtitle {
+  font-size: 1rem; color: var(--text-light);
+}
+
+.products-list {
+  max-width: var(--max-width); margin: 0 auto; padding: 2rem 2rem 4rem;
+}
+
+.product {
+  border: 1px solid var(--border); border-radius: 10px; padding: 2rem;
+  background: var(--bg); margin-bottom: 1.25rem;
+  transition: border-color 0.2s;
+}
+.product:hover { border-color: #a0a6b0; }
+.product-top {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 1rem; margin-bottom: 0.75rem;
+}
+.product h2 {
+  font-family: 'Source Serif 4', serif;
+  font-size: 1.3rem; font-weight: 600;
+}
+.product h2 a { color: var(--text); }
+.product h2 a:hover { color: var(--accent); text-decoration: none; }
+.status {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.04em; padding: 0.25rem 0.65rem; border-radius: 100px;
+  white-space: nowrap; flex-shrink: 0;
+}
+.status-live { background: var(--green-light); color: var(--green); }
+.status-live::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green);
+}
+.status-archive { background: var(--bg-alt); color: var(--text-light); }
+
+.product p {
+  font-size: 0.95rem; color: var(--text); line-height: 1.7;
+  margin-bottom: 1rem;
+}
+.product .details {
+  font-size: 0.85rem; color: var(--text-light); line-height: 1.7;
+}
+.product .details em { font-style: italic; }
+.product .visit {
+  display: inline-block; margin-top: 1rem; font-size: 0.9rem; font-weight: 500;
+}
+
+footer {
+  max-width: var(--max-width); margin: 0 auto; padding: 3rem 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.85rem; color: var(--text-light);
+}
+footer .links { display: flex; gap: 1.5rem; }
+
+@media (max-width: 768px) {
+  .page-header h1 { font-size: 1.8rem; }
+  .product-top { flex-direction: column; gap: 0.5rem; }
+  nav .inner { gap: 1.5rem; }
+  nav .tabs a { padding: 0.3rem 0.6rem; font-size: 0.8rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a href="index.html" class="logo">Eva Vivalt</a>
+    <div class="tabs">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="products.html" class="active">Products</a>
+      <a href="writing.html">Writing</a>
+      <a href="https://www.evavivalt.com/cv">CV</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <h1>Products & Platforms</h1>
+  <div class="subtitle">Tools and platforms I've built to improve the research process, from AI-assisted plan review to prediction markets for social science.</div>
+</div>
+
+<div class="products-list">
+
+  <div class="product">
+    <div class="product-top">
+      <h2><a href="https://earlyreview.ai">EarlyReview</a></h2>
+      <span class="status status-live">Live</span>
+    </div>
+    <p>AI-powered feedback on pre-analysis plans and registered reports. Upload a document and get structured comments on research design issues — statistical power, identification strategy, outcome specification, and more — before sending it for peer review.</p>
+    <div class="details">
+      Built to address a gap in the research pipeline: pre-analysis plans are increasingly required by journals and registries, but researchers rarely get feedback on them before submission. EarlyReview uses AI to provide immediate, actionable comments on power calculations, identification strategies, outcome specification, and other common methodological issues.
+    </div>
+    <a href="https://earlyreview.ai" class="visit">Visit EarlyReview &rarr;</a>
+  </div>
+
+  <div class="product">
+    <div class="product-top">
+      <h2><a href="https://socialscienceprediction.org">Social Science Prediction Platform</a></h2>
+      <span class="status status-live">Live</span>
+    </div>
+    <p>A platform for collecting and evaluating expert forecasts of social science experimental results. Researchers register their studies, experts submit quantitative predictions, and the platform tracks forecast accuracy over time via a public leaderboard.</p>
+    <div class="details">
+      Developed as part of a broader research agenda on forecasting in social science. The platform has collected predictions for hundreds of studies and provides data for understanding how well researchers can anticipate experimental findings. Related paper: "Predict Science to Improve Science" (<em>Science</em>, 2019).
+    </div>
+    <a href="https://socialscienceprediction.org" class="visit">Visit the Prediction Platform &rarr;</a>
+  </div>
+
+</div>
+
+<footer>
+  <div>eva.vivalt@utoronto.ca</div>
+  <div class="links">
+    <a href="https://twitter.com/evavivalt">Twitter</a>
+    <a href="https://scholar.google.com/citations?user=XhWB2GIAAAAJ">Google Scholar</a>
+  </div>
+</footer>
+
+</body>
+</html>

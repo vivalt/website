@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research - Eva Vivalt</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --text: #1d1d1f;
+  --text-light: #6e6e73;
+  --accent: #0071e3;
+  --bg: #fff;
+  --bg-alt: #f5f5f7;
+  --border: #d2d2d7;
+  --max-width: 980px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', -apple-system, sans-serif; color: var(--text); background: var(--bg); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,0.8); backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+nav .inner {
+  max-width: var(--max-width); margin: 0 auto; padding: 0.8rem 2rem;
+  display: flex; align-items: center; gap: 3rem;
+}
+nav .logo { font-weight: 700; font-size: 1.05rem; color: var(--text); white-space: nowrap; text-decoration: none; }
+nav .logo:hover { text-decoration: none; }
+nav .tabs { display: flex; gap: 0.25rem; }
+nav .tabs a {
+  padding: 0.4rem 0.9rem; border-radius: 6px; font-size: 0.85rem;
+  font-weight: 500; color: var(--text-light); transition: all 0.15s;
+}
+nav .tabs a:hover { background: var(--bg-alt); color: var(--text); text-decoration: none; }
+nav .tabs a.active { background: var(--text); color: #fff; }
+
+.page-header {
+  max-width: var(--max-width); margin: 0 auto; padding: 3.5rem 2rem 0.5rem;
+}
+.page-header h1 {
+  font-family: 'Source Serif 4', serif; font-size: 2.2rem; font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.page-header .subtitle {
+  font-size: 1rem; color: var(--text-light);
+}
+
+/* Topic filter */
+.filter-bar {
+  max-width: var(--max-width); margin: 0 auto; padding: 1.5rem 2rem;
+  display: flex; gap: 0.5rem; flex-wrap: wrap;
+  position: sticky; top: 49px; z-index: 50;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.filter-bar button {
+  padding: 0.5rem 1rem; border-radius: 100px; border: 1px solid var(--border);
+  background: var(--bg); font-family: inherit; font-size: 0.85rem; font-weight: 500;
+  cursor: pointer; transition: all 0.15s;
+}
+.filter-bar button:hover { border-color: var(--text); }
+.filter-bar button.active { background: var(--text); color: #fff; border-color: var(--text); }
+
+.research-content {
+  max-width: var(--max-width); margin: 0 auto; padding: 0 2rem 4rem;
+}
+
+.topic-group { margin-top: 2.5rem; }
+.topic-group h2 {
+  font-family: 'Source Serif 4', serif; font-size: 1.3rem; font-weight: 600;
+  margin-bottom: 0.5rem; padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.topic-coverage {
+  font-size: 0.8rem; color: #999; margin-top: 0.75rem; margin-bottom: 1rem;
+  font-style: italic;
+}
+.topic-coverage em { font-style: normal; }
+
+.paper-list { list-style: none; }
+.paper-list li {
+  padding: 1rem 0; border-bottom: 1px solid var(--border);
+  display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: baseline;
+}
+.paper-list li:last-child { border-bottom: none; }
+.paper-title { font-weight: 500; font-size: 0.95rem; line-height: 1.5; }
+.paper-title a { color: var(--text); }
+.paper-title a:hover { color: var(--accent); }
+.paper-authors { font-size: 0.82rem; color: var(--text-light); margin-top: 0.25rem; }
+.paper-press { font-size: 0.75rem; color: #999; margin-top: 0.15rem; }
+.paper-press em { font-style: italic; }
+.paper-venue {
+  font-size: 0.8rem; color: var(--accent); white-space: nowrap; font-weight: 500;
+}
+.paper-status {
+  font-size: 0.8rem; color: var(--text-light); white-space: nowrap; font-weight: 500;
+}
+
+footer {
+  max-width: var(--max-width); margin: 0 auto; padding: 3rem 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.85rem; color: var(--text-light);
+}
+footer .links { display: flex; gap: 1.5rem; }
+
+@media (max-width: 768px) {
+  .paper-list li { grid-template-columns: 1fr; gap: 0.3rem; }
+  nav .inner { gap: 1.5rem; }
+  nav .tabs a { padding: 0.3rem 0.6rem; font-size: 0.8rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a href="index.html" class="logo">Eva Vivalt</a>
+    <div class="tabs">
+      <a href="index.html">Home</a>
+      <a href="research.html" class="active">Research</a>
+      <a href="products.html">Products</a>
+      <a href="writing.html">Writing</a>
+      <a href="https://www.evavivalt.com/cv">CV</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <h1>Research</h1>
+  <div class="subtitle">Publications, working papers, and work in progress.</div>
+</div>
+
+<div class="filter-bar">
+  <button class="active" data-filter="all">All</button>
+  <button data-filter="cash-transfers">Cash Transfers</button>
+  <button data-filter="evidence-policy">Evidence & Policy</button>
+  <button data-filter="forecasting">Forecasting</button>
+  <button data-filter="meta-science">Meta-Science</button>
+  <button data-filter="values-norms">Values & Norms</button>
+</div>
+
+<div class="research-content">
+
+  <div class="topic-group" data-topic="cash-transfers">
+    <h2>Cash Transfers</h2>
+    <div class="topic-coverage">Media coverage (100+ articles): <em>Financial Times</em>, <em>New York Times</em>, <em>NPR</em>, <em>Scientific American</em>, <em>Wired</em>, <em>Washington Post</em>, <em>Vox</em>, <em>Forbes</em>, <em>Newsweek</em>, <em>USA Today</em></div>
+    <ul class="paper-list">
+      <li>
+        <div>
+          <div class="paper-title"><a href="papers/Vivalt-et-al-ORUS-employment.pdf">The Employment Effects of a Guaranteed Income: Experimental Evidence from Two U.S. States</a></div>
+          <div class="paper-authors">with Rhodes, Bartik, Broockman, Krause, Miller (2025)</div>
+        </div>
+        <div class="paper-venue">QJE, accepted</div>
+      </li>
+      <li>
+        <div>
+          <div class="paper-title"><a href="papers/Miller-et-al-ORUS-health.pdf">Does Income Affect Health? Evidence from a Randomized Controlled Trial of a Guaranteed Income</a></div>
+          <div class="paper-authors">with Miller, Rhodes, Bartik, Broockman, Krause (2025)</div>
+        </div>
+        <div class="paper-venue">R&R, AER</div>
+      </li>
+      <li>
+        <div>
+          <div class="paper-title"><a href="papers/Bartik-et-al-ORUS-household-finance.pdf">The Impact of Unconditional Cash Transfers on Consumption and Household Balance Sheets: Experimental Evidence from Two US States</a></div>
+          <div class="paper-authors">with Bartik, Rhodes, Broockman, Krause, Miller (2024)</div>
+        </div>
+        <div class="paper-status">Working paper</div>
+      </li>
+      <li>
+        <div>
+          <div class="paper-title"><a href="papers/Broockman-et-al-ORUS-political.pdf">The Causal Effects of Income on Political Attitudes and Behavior: A Randomized Field Experiment</a></div>
+          <div class="paper-authors">with Broockman, Rhodes, Bartik, Dotson, Krause, Miller (2024)</div>
+        </div>
+        <div class="paper-status">Working paper</div>
+      </li>
+      <li>
+        <div>
+          <div class="paper-title"><a href="papers/ORUS-Children.pdf">The Impact of Unconditional Cash Transfers on Parenting and Children</a></div>
+          <div class="paper-authors">with Krause, Rhodes, Miller, Bartik, Broockman (2025)</div>
+        </div>
+        <div class="paper-status">Working paper</div>
+      </li>
+      <li>
+        <div>
+          <div class="paper-title">The Unclaimed Property Puzzle: Billion Dollar Bills Lying on the Sidewalk</div>
+          <div class="paper-authors">Vivalt (2024)</div>
+        </div>
+        <div class="paper-status">Working paper</div>
+      </li>
+      <li>
+        <div>
+          <div class="paper-title">The Effects of Unconditional Cash Transfers: Experimental Evidence from Two Large Pilots</div>
+          <div class="paper-authors">with Abdul-Razzak, Bartik, Miller, Rhodes</div>
+        </div>
+        <div class="paper-status">In progress</div>
+      </li>
+      <li>
+        <div>
+          <div class="paper-title">Income Shocks and Intrahousehold Dynamics: Evidence from a Guaranteed Income Experiment</div>
+          <div class="paper-authors">with Rhodes, Broockman, Krause, Miller, Bartik (2026)</div>
+        </div>
+        <div class="paper-status">In progress</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="topic-group" data-topic="evidence-policy">
+    <h2>Evidence & Policy</h2>
+    <div class="topic-coverage">Media coverage: <em>VoxDev</em>, <em>Social Science Research Council</em></div>
+    <ul class="paper-list">
+      <li>
+        <div>
+          <div class="paper-title"><a href="papers/Formal-Evidence.pdf">Local Knowledge, Formal Evidence, and Policy Decisions</a></div>
+          <div class="paper-authors">with Coville, KC (2025)</div>
+        </div>
+        <div class="paper-venue">J Dev Econ</div>
+      </li>
+      <li>
+        <div>
+          <div class="paper-title"><a href="papers/How-Do-Policymakers-Update.pdf">How Do Policymakers Update Their Beliefs?</a></div>
+          <div class="paper-authors">with Coville (2023)</div>
+        </div>
+        <div class="paper-venue">J Dev Econ</div>
+      </li>
+      <li>
+        <div>
+          <div class="paper-title">Seeking Evidence: Which Studies Do Policymakers Prefer?</div>
+          <div class="paper-authors">with Coville, KC (2023)</div>
+        </div>
+        <div class="paper-status">Working paper</div>
+      </li>
+      <li>
+        <div>
+          <div class="paper-title">The Distributional Preferences of Policy Practitioners</div>
+          <div class="paper-authors">with Coville, Dai</div>
+        </div>
+        <div class="paper-status">In progress</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="topic-group" data-topic="forecasting">
+    <h2>Forecasting</h2>
+    <div class="topic-coverage">Media coverage: <em>Ars Technica</em>, <em>Science Daily</em>, <em>Behavioral Scientist</em></div>
+    <ul class="paper-list">
+      <li>
+        <div>
+          <div class="paper-title"><a href="https://www.nber.org/papers/w34493">Forecasting Social Science: Evidence from 100 Projects</a></div>
+          <div class="paper-authors">with DellaVigna (2025)</div>
+        </div>
+        <div class="paper-status">NBER WP</div>
+      </li>
+      <li>
+        <div>
+          <div class="paper-title"><a href="https://doi.org/10.1257/pandp.20201080">Forecasting the Results of Experiments: Piloting an Elicitation Strategy</a></div>
+          <div class="paper-authors">with DellaVigna, Otis (2020)</div>
+        </div>
+        <div class="paper-venue">AEA P&P</div>
+      </li>
+      <li>
+        <div>
+          <div class="paper-title"><a href="https://doi.org/10.1126/science.aaz1704">Predict Science to Improve Science</a></div>
+          <div class="paper-authors">with DellaVigna, Pope (2019)</div>
+        </div>
+        <div class="paper-venue">Science</div>
+      </li>
+      <li>
+        <div>
+          <div class="paper-title">The Model Challenges: Gathering, Aggregating, and Evaluating Covid Mortality Models</div>
+          <div class="paper-authors">with Golden, Scacco, Zhai, Slough, Humphreys, Diaz-Cayeros, Dionne, KC, Nazrullaeva, et al. (2025)</div>
+        </div>
+        <div class="paper-status">Working paper</div>
+      </li>
+      <li>
+        <div>
+          <div class="paper-title">What are the Prospects of Forecasting the Far Future?</div>
+          <div class="paper-authors">with Bernard (2025)</div>
+        </div>
+        <div class="paper-venue">OUP book chapter</div>
+      </li>
+      <li>
+        <div>
+          <div class="paper-title">Using Priors in Experimental Design: How Much Are We Leaving on the Table?</div>
+          <div class="paper-authors">Vivalt (2020)</div>
+        </div>
+        <div class="paper-venue">OUP book chapter</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="topic-group" data-topic="meta-science">
+    <h2>Meta-Science</h2>
+    <div class="topic-coverage">Media coverage: <em>Financial Times</em>, <em>The Atlantic</em>, <em>Washington Post</em>, <em>Vox</em>, <em>Mother Jones</em>, Marginal Revolution</div>
+    <ul class="paper-list">
+      <li>
+        <div>
+          <div class="paper-title"><a href="https://doi.org/10.1093/jeea/jvaa019">How Much Can We Generalize from Impact Evaluations?</a></div>
+          <div class="paper-authors">Vivalt (2020)</div>
+        </div>
+        <div class="paper-venue">JEEA</div>
+      </li>
+      <li>
+        <div>
+          <div class="paper-title"><a href="papers/Trajectory-of-Specification-Searching.pdf">Specification Searching and Significance Inflation Across Time, Methods and Disciplines</a></div>
+          <div class="paper-authors">Vivalt (2019)</div>
+        </div>
+        <div class="paper-venue">Oxford B Econ Stat</div>
+      </li>
+      <li>
+        <div>
+          <div class="paper-title"><a href="papers/Heterogeneous-Treatment-Effects.pdf">Heterogeneous Treatment Effects in Impact Evaluation</a></div>
+          <div class="paper-authors">Vivalt (2015)</div>
+        </div>
+        <div class="paper-venue">AER P&P</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="topic-group" data-topic="values-norms">
+    <h2>Values & Norms</h2>
+    <ul class="paper-list">
+      <li>
+        <div>
+          <div class="paper-title"><a href="https://dx.doi.org/10.2139/ssrn.4984557">Moral Preferences and the Marketplace of Ideas</a></div>
+          <div class="paper-authors">with Huet-Vaughn, Pham, Tasoff (2025)</div>
+        </div>
+        <div class="paper-venue">R&R, Econ J</div>
+      </li>
+      <li>
+        <div>
+          <div class="paper-title"><a href="papers/Impact-of-New-Products-on-Ethical-Beliefs.pdf">The Impact of New Products on Ethical Beliefs</a></div>
+          <div class="paper-authors">with Freitas-Groff, Macdonald (2026)</div>
+        </div>
+        <div class="paper-venue">Cond. acc., EER</div>
+      </li>
+      <li>
+        <div>
+          <div class="paper-title"><a href="https://doi.org/10.1093/jae/ejab039">Challenges in Changing Social Norms: Evidence from Interventions Targeting Child Marriage in Ethiopia</a></div>
+          <div class="paper-authors">with Chow (2022)</div>
+        </div>
+        <div class="paper-venue">J Af Econ</div>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  <div>eva.vivalt@utoronto.ca</div>
+  <div class="links">
+    <a href="https://twitter.com/evavivalt">Twitter</a>
+    <a href="https://scholar.google.com/citations?user=XhWB2GIAAAAJ">Google Scholar</a>
+  </div>
+</footer>
+
+<script>
+// Filter functionality
+const filterButtons = document.querySelectorAll('.filter-bar button');
+const topicGroups = document.querySelectorAll('.topic-group');
+
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Update active button
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    const filter = button.dataset.filter;
+
+    // Show/hide topic groups
+    topicGroups.forEach(group => {
+      if (filter === 'all' || group.dataset.topic === filter) {
+        group.style.display = 'block';
+      } else {
+        group.style.display = 'none';
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>
