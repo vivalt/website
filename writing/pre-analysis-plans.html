@@ -123,27 +123,33 @@ footer .links { display: flex; gap: 1.5rem; }
   </div>
 
   <div class="post-content">
-    <p>I've developed <a href="https://earlyreview.ai">EarlyReview</a>, a tool that helps researchers evaluate their pre-analysis plans and registered reports for completeness, clarity, and consistency before official registration.</p>
-
-    <h2>Key Findings</h2>
-
-    <p>I tested the tool on publicly available plans from the AEA RCT Registry and found performance varied significantly across different dimensions:</p>
-
-    <p><strong>Excellent Performance (100%):</strong> All plans included foundational information such as research questions, study design, randomization units, treatment arms, and analysis units.</p>
-
-    <p><strong>Good Performance (85-95%):</strong> Most plans described target populations, assignment mechanisms, estimate types (ITT), sample sizes, covariates, and regression equations—though not universally.</p>
-
-    <p><strong>Problematic Areas (55-70%):</strong> Plans frequently lacked clear strategies for addressing attrition or clustering standard errors. Primary outcomes and main specifications often contained inconsistencies or lacked clarity.</p>
-
-    <p><strong>Significant Gaps (<50%):</strong> Multiple hypothesis testing procedures remained unspecified or unclear. Power calculations and Minimum Detectable Effects (MDEs) were often missing or unrealistic.</p>
-
-    <h2>Notable Statistics</h2>
-
-    <p>The average pre-analysis plan passed approximately 80% of checks. Very few plans tested passed all the checks. Journal of Development Economics Registered Reports performed substantially better, as expected given their greater detail requirements.</p>
-
-    <h2>Purpose and Access</h2>
-
-    <p>The tool provides detailed feedback through comments while nudging researchers toward improved practices. Users can upload plans confidentially at no cost and access free screening at <a href="https://earlyreview.ai">EarlyReview.ai</a>.</p>
+    <p>I developed a tool, <strong><a href="https://earlyreview.ai">EarlyReview</a></strong>, which helps researchers screen their pre-analysis plans and registered reports for completeness, clarity and consistency prior to registration.</p>
+    
+    <p>The tool is designed to help researchers develop better plans. While anyone can upload their plan to their favourite LLM, EarlyReview was extensively tested to provide helpful comments. It also lets researchers whose plans &#8220;pass&#8221; the screening generate a public page that they can then share with funders or journals as an indicator that it cleared these third-party checks.</p>
+    
+    <p>In testing it out on a random sample of publicly-available plans from the AEA RCT Registry, several things stood out to me. Here is a quick summary of the dimensions along which researchers seem to do well vs. poorly, with the percent of plans that passed related checks:</p>
+    
+    <p><strong>Excellent (100%): </strong>All plans provided basic information on what the study is about. This includes things like a description of the research question, design type (perhaps easy on the AEA RCT Registry&#8230; it&#8217;s a RCT!), unit of randomization, treatment arms, and unit of analysis.</p>
+    
+    <p><strong>Good (85-95%): </strong>Plans generally &#8211; but not universally &#8211; included things like a clear description of the target population, the assignment mechanism, the type of estimate (ITT/etc.), the sample size, covariates, and a regression equation. It may be a bit surprising that not every plan included all of these: the registry requires some of them be entered into the website directly, and they may be present there but nonetheless not be described in the pre-analysis plan itself.</p>
+    
+    <p><strong>Often problematic (55-70%):</strong> Here it gets a little dicier. Many plans did not have a good plan to deal with attrition or were unclear on how they would cluster standard errors, and there were also frequent issues with how the primary outcomes or main specifications were described. While a regression equation was generally present, as previously described, there could nonetheless be a flag with regards to the main specification if the plan contained inconsistencies or lacked clarity as to which of several approaches would be taken for the main specification. Similarly, primary outcomes could be described in the document, but lack of clarity or inconsistency across the pre-analysis plan could raise a flag.</p>
+    
+    <p><strong>Yikes (&lt;50%):</strong> How authors plan to deal with multiple hypothesis testing is often unspecified or unclear, and plans often lack credible power calculations or information on MDEs. Again, when power calculations were flagged in a pre-analysis plan, the plan could have contained power calculations, but power calculations with some error or which were not realistic given other information in the plan.</p>
+    
+    <p>The <strong>average </strong>pre-analysis plan <strong>passed about 80% of checks. Very few plans tested passed all the checks. </strong></p>
+    
+    <p>One could wonder whether EarlyReview&#8217;s screening tool simply is missing things in the pre-analysis plans &#8211; that they would actually do much better but for some fault of the tool. This is plausible, but I spot checked the sample of plans. Ones that failed a lot of checks were indeed pretty basic, such as just providing a list of hypotheses on a single page. (It is likely that as authors upload more information to the AEA RCT Registry directly, that extra information in conjunction with the posted pre-analysis plans would help more of these plans clear all of the checks.) I also conducted the same tests with the Journal of Development Economics&#8217; Registered Reports, and they performed much better, as one might expect given registered reports tend to be more detailed than pre-analysis plans.<sup><a id="ref1" href="http://evavivalt.com/index.html%3Fp=1487.html#note1">1</a></sup> Caveats remain.<sup><a id="ref2" href="http://evavivalt.com/index.html%3Fp=1487.html#note2">2</a></sup></p>
+    
+    <p>In the long run, I expect that research pipelines will develop with increased formalism and checks, but hopefully other AI tools will make it less burdensome to create plans, too. The easier it is to run AI-assisted experiments, the more screening can be helpful. I&#8217;m happy to work with journal editors and others on other AI-based tools for the new research paradigm.</p>
+    
+    <p>Anyway, <strong><a href="https://earlyreview.ai">try it out</a></strong> for yourself &#8211; uploading a pre-analysis plan or registered report is free and confidential. I welcome feedback that can improve the tool for others. I&#8217;m also still looking for examples to highlight on the site &#8211; please get in touch if you&#8217;re willing to publicly share your report in exchange for more free credits.</p>
+    
+    <hr class="wp-block-separator has-alpha-channel-opacity"/>
+    
+    <p><a id="note1" href="http://evavivalt.com/index.html%3Fp=1487.html#ref1"><sup>1</sup></a>Important note: The approach is currently tuned to be generous to authors. In early testing, far fewer JDE RRs were passing all checks; being wary of the limitations of AI-based screening, I intentionally made the screening more conservative so that almost all JDE RRs &#8220;pass&#8221;. The above stats, in which very few AEA RCT Registry pre-analysis plans pass all checks, are based on the same approach under which almost all JDE RRs pass.<br><br>We can debate when it is appropriate to be generous. My thinking at the moment is that the point of such a tool is to provide useful feedback through comments (there are typically many more potential issues flagged in comments, which do not prevent a paper from &#8220;clearing&#8221; the core checks), while nudging the field in the right direction. &#8220;Nudging the field in the right direction&#8221; requires generosity, imo. The approach is versioned; I&#8217;m thinking of adding an option for users who want comments that flag more potential issues.</p>
+    
+    <p><a id="note2" href="http://evavivalt.com/index.html%3Fp=1487.html#ref2"><sup>2</sup></a>In particular: 1) AI-based tools are not perfect. I think the results above are more reliable than one would have obtained by asking humans to hand-code the same fields, but nonetheless care is warranted in interpretation; 2) the above analysis was done on the documents that could be easily processed. A small share of randomly-selected AEA RCT Registry pre-analysis plans JDE Registered Reports could not be processed and were replaced. For the JDE RRs, this was because of file size, and for the pre-analysis plans this was because not all were PDFs. I imagine that the longer RR documents would, all else equal, potentially contain even more detail &#8211; but they could also contain more inconsistencies.</p>
   </div>
 </article>
 
